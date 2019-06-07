@@ -1,5 +1,10 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+CREATE DATABASE goalBotDB;
+use goalBotDB;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+create table user(
+    id int not null auto_increment,
+    userName varCHAR(100) not null,
+    pwd VARCHAR(100) not null,
+    avatar LONGBLOB,
+    primary key(id)
+)
