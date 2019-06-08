@@ -18,6 +18,7 @@ CREATE TABLE goal(
    goal_id int not null auto_increment primary key,
    createDate datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
    endDate datetime NOT NULL,
+   goal varchar(355) not null,
    ms1 varchar(355) not null,
    ms2 varchar(355) not null,
    ms3 varchar(355) not null,
