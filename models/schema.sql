@@ -37,5 +37,5 @@ USE goalBotDB;
 INSERT INTO user ( userName, password, email, Avatar)
 VALUES ( 'jerry', 'abc', 'j@gmail.com', 'hello');
 USE goalBotDB;
-INSERT INTO goal(endDate, ms1, ms2, ms3, ms4, ms5, user_id)
-VALUES ('2019-11-4','read research paper','code in node.js','write blog', 'reply users','make coffee', '1');
+INSERT INTO goal(endDate, goal, ms1, ms2, ms3, ms4, ms5, user_id)
+VALUES ('2019-11-4','get through today','read research paper','code in node.js','write blog', 'reply users','make coffee', '1');

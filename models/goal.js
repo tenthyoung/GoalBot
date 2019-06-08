@@ -1,9 +1,12 @@
 module.exports = function(sequelize, DataTypes) {
     var Goal = sequelize.define("Goal", {
-      title: {
-        type: DataTypes.STRING,
-      
-      }
+     goal: DataTypes.STRING,
+     endDate: DataTypes.DATETIME,
+     ms1: DataType.STRING,
+     ms2: DataType.STRING,
+     ms3: DataType.STRING,
+     ms4: DataType.STRING,
+     ms5: DataType.STRING,
       
     });
   
@@ -18,5 +21,6 @@ module.exports = function(sequelize, DataTypes) {
     };
   
     return Goal;
+
   };
   
