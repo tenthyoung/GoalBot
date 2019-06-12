@@ -10,8 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/css?family=Play:400,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
   
 </head>
 
@@ -35,10 +34,10 @@
       <div class="col s12 padding-top-50">
         <div class="col s3">&nbsp;</div>
         <div class="col s3">
-            <button data-target="modal1" class="btn modal-trigger waves-effect waves-light btn-large"><i class="material-icons left">control_point</i>Sign Up</button>
+            <button data-target="modal1" id="sign-up" class="btn modal-trigger waves-effect waves-light btn-large"><i class="material-icons left">control_point</i>Sign Up</button>
         </div>
         <div class="col s3">
-            <button data-target="modal2" class="btn modal-trigger waves-effect waves-light btn-large"><i class="material-icons left">control_point</i>Sign In</button>
+            <button data-target="modal2" id="sign-in" class="btn modal-trigger waves-effect waves-light btn-large"><i class="material-icons left">control_point</i>Sign In</button>
         </div>
         <div class="col s3">&nbsp;</div>
       </div><!--end marg-top-50-->
@@ -78,7 +77,7 @@
   <!-- Modal Structure -->
   <div id="modal2" class="modal">
       <div class="modal-content">
-        <h3>Sign Ip</h3>
+        <h3>Sign In</h3>
         <p>Sign in to see your goal progress</p>
         <div class="row">
             <form class="col s12">
@@ -98,23 +97,29 @@
           </div>
       </div>
       <div class="modal-footer">
-        <a href="#!" id="sign-in" class="modal-close waves-effect waves-green btn-flat">Sign In!</a>
+        <a href="#!"  class="modal-close waves-effect waves-green btn-flat">Sign In!</a>
       </div>
     </div><!--end sign in modal-->
   
  </div><!-- end hp-body -->
 
-  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
   <!--jquery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="jquery-3.4.0.min.js">
-  $("#sign-in").on("click", function (event) {
-            event.preventDefault();
-			 $(document).ready(function () {
-            $('select').formSelect();
-            $('.modal').modal();
-        })
-      });
+
+      <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  // $("#sign-in").on("click", function (event) {
+   
+  //   $('.modal').modal();
+ 
+  //       });
+
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+     
 
 </script>
 </body>
