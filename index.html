@@ -12,8 +12,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-          
-
+  
 </head>
 
 <body>
@@ -72,7 +71,7 @@
         </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Sign Up!</a>
+      <a href="#!" id="sign-up" class="modal-close waves-effect waves-green btn-flat">Sign Up!</a>
     </div>
   </div><!--end sign up modal-->
 
@@ -99,18 +98,24 @@
           </div>
       </div>
       <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Sign In!</a>
+        <a href="#!" id="sign-in" class="modal-close waves-effect waves-green btn-flat">Sign In!</a>
       </div>
     </div><!--end sign in modal-->
   
  </div><!-- end hp-body -->
 
   <script type="text/javascript" src="js/materialize.min.js"></script>
-  <script type="text/javascript" >
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, options);
-  });
+  <!--jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="jquery-3.4.0.min.js">
+  $("#sign-in").on("click", function (event) {
+            event.preventDefault();
+			 $(document).ready(function () {
+            $('select').formSelect();
+            $('.modal').modal();
+        })
+      });
+
 </script>
 </body>
 </html>
