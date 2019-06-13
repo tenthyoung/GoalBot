@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Goalbot</title>
+    <title>GoalBot</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Josefin+Sans|Play|Ubuntu|ZCOOL+KuaiLe&display=swap"
@@ -11,14 +11,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="../public/styles/styles.css" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="../public/styles/styles.css" /> -->
     <link rel="stylesheet" type="text/css" media="screen" href="../public/styles/app.css" />
 </head>
 <body>
     <nav>
         <div class="nav-wrapper white">
-            <a href="#!" class="brand-logo red-text play-font">
-                <i class="material-icons">check_circle</i>GoalBot</a>
+            <a id="brand-logo" href="#!" class="brand-logo red-text play-font">
+                <i id="logo-icon" class="material-icons ">check_circle</i>GoalBot</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger red-text">
                 <i class="material-icons">menu</i>
             </a>
@@ -36,7 +36,8 @@
         <li><a href="collapsible.html" class="red-text">App</a></li>
     </ul>
 
-    <div class="container">
+    <div class="">
+        <!-- row-1: Avatar & Stats -->
         <div id="row-1" class="row">
             <div class="col s4">
                 <img id="avatar" src="https://mmtcdn.blob.core.windows.net/084395e6770c4e0ebc5612f000acae8f/mmtcdn/Products20549-640x640-592019517.jpg"
@@ -55,47 +56,127 @@
                 </div>
             </div>
         </div>
-        <!-- Row 1 ending div -->
+        <!-- END row-1: Avatar & Stats -->
 
+        <!-- row-2: Menu Buttons & App -->
         <div id="row-2" class="row">
             <nav class="nav-extended">
                 <div class="nav-content">
                     <ul class="tabs tabs-transparent">
-                        <li class="tab"><a class="active menu-button" href="#test1">To Do</a></li>
-                        <li class="tab"><a class="menu-button" href="#test2">Daily Goal</a></li>
-                        <li class="tab"><a class="menu-button" href="#test3">Habit Goal</a></li>
-                        <li class="tab"><a class="menu-button" href="#test4">Rewards</a></li>
+                        <li class="tab"><a class="active" href="#test1">To Do</a></li>
+                        <li class="tab"><a href="#test2">Daily Goal</a></li>
+                        <li class="tab"><a href="#test3">Bots</a></li>
+                        <li class="tab"><a href="#test4">Rewards</a></li>
                     </ul>
                 </div>
-
             </nav>
-            <!-- <div class="col s3">
-                <a class="waves-effect waves-light btn red">To Do</a>
+
+            <!-- To Do List Screen -->
+            <div id="test1" class="col s12">
+                <ul id="to-do-list" class="collection with-header">
+                    <li class="collection-header"><h4>First Names</h4></li>
+                    <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                    <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                    <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                    <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                </ul>
             </div>
-            <div class="col s3">
-                <a class="waves-effect waves-light btn red">Daily Goal</a>
-            </div>
-            <div class="col s3">
-                <a class="waves-effect waves-light btn red">Habit Goal</a>
-            </div>
-            <div class="col s3">
-                <a class="waves-effect waves-light btn red">Rewards</a>
-            </div> -->
+            <!-- To Do List Screen END -->
+
+            <div id="test2" class="col s12">Test 2</div>
+            <div id="test3" class="col s12">Test 3</div>
+            <div id="test4" class="col s12">Test 4</div>
         </div>
-        <!-- Row 2 Ending Div -->
+        <!-- END row-2: Menu Buttons -->
 
     </div>
     <!-- Container ending div -->
 
+    <!-- Floating Action Button -->
+    <div class="fixed-action-btn">
+        <a id="main-fab" class="btn-floating btn-large amber darken-1">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+            <li>
+                <a id="#new-to-do" class="btn-floating red tooltipped modal-trigger" href="#todo-creation-modal" data-position="left" data-tooltip="New To Do">
+                    <i class="material-icons">check_circle</i>
+                </a>
+            </li>
+            <li>
+                <a class="btn-floating red tooltipped green" data-position="left" data-tooltip="New Daily Goal">
+                    <i class="material-icons">access_time</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- END: Floating Action Button -->
+
+    <!-- Modal 1: Create a New To Do -->
+    <div id="todo-creation-modal" class="modal">
+        <!-- modal-content -->
+        <div class="modal-content">
+            <!-- Create To Do Modal Content -->
+            <h4>Create a New To Do</h4>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="task-title" type="text" class="validate">
+                    <label class="active" for="task-title">Task Title</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+                    <label for="textarea2">Description</label>
+                </div>
+            </div>
+
+            <!--Subtasks row -->
+            <div class="row">
+                <div class="col s12">
+                    <ul id="subtasks" class="collection with-header">
+                        <li class="collection-header">
+                            <h4>Subtasks</h4>
+                        </li>
+                        <div id="new-subtasks"></div>
+                        <li id="subtask-input-container" class="collection-item">
+                            <div class="input-field">
+                                <input id="create-subtask-input" class="col s8" type="text">
+                                <label class="active" for="create-subtask-input">Create a Subtask</label>
+
+                                <a id="add-subtask" href="#!" class="secondary-content">
+                                    <i class="material-icons red-text">send</i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Subtasks Row END -->
+
+            <!-- Date Picker -->
+            <div class="input-field col s6">
+                <input id="#new-task-due-date" class="col s8 datepicker" type="text">
+                <label class="active" for="create-subtask-input">Due Date</label>
+            </div>
+            <!-- Date Picker END -->
+
+
+        </div>
+        <!-- END modal-content -->
+
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a id="create-new-todo-btn" href="#!" class="modal-close waves-effect waves-green btn-flat">Create</a>
+        </div>
+    </div>
+    <!-- END Modal 1: Create a New To Do -->
 
 
 
-
-
-
-
-    <!-- <script src="./assets/javascript/jquery.js"></script> -->
+    <script src="../public/js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="../public/js/index.js"></script>
+    <script src="../public/js/app.js"></script>
 </body>
 </html>
