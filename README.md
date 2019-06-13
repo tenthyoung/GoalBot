@@ -7,4 +7,4 @@ Design:
 (one user_ID can have multiple goal_ID's)
  
 Svelte JS:
--Svelte JS is a reactive compiler that works similarly to Angular and Vue, but it is much faster.
+-Svelte JS is a reactive compiler that works similarly to Angular and Vue, but it is much faster because it prevompiles everything before runtiem.
