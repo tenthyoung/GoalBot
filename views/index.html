@@ -1,132 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Goalbot</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Project 2 Homepage</title>
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="../public/styles/styles.css" />
+  <link rel="stylesheet" type="text/css" href="public/styles/styles.css">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Play:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
+
 <body>
-    <nav>
-        <div class="nav-wrapper white">
-            <a href="#!" class="brand-logo red-text play-font">
-                  <i class="material-icons">check_circle</i> GoalBot</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger red-text">
-                <i class="material-icons">menu</i>
-            </a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#" class="red-text">Sign up</a></li>
-                <li><a href="#" class="red-text">Login</a></li>
-                <li><a href="./app.html" class="red-text">App</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="#" class="red-text">Sign up</a></li>
-        <li><a href="#" class="red-text">Login</a></li>
-        <li><a href="collapsible.html" class="red-text">App</a></li>
+<nav>
+  <div class="nav-wrapper container">
+    <a href="#" class="brand-logo">Logo</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="#">Login</a></li>
+      <li><a href="#">View Goals</a></li>
+      <li><a href="#">Sign Up</a></li>
     </ul>
+  </div>
+</nav>
 
-    <div class="section no-pad-bot" id="index-banner">
-        <div class="container">
-            <br>
-            <br>
-            <h1 class="header center orange-text">Goalventure Quest</h1>
-            <div class="row center">
-                <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+ <div id="hp-body" class="container center">
+    <div class="row pad-top-100">
+      <div class="col s12">
+        <h1>Welcome to (Insert app name here)!</h1><h3>Sign up to get your goals in check, <br />or sign in to check your progress.</h3>
+      </div><!--end col s12 -->
+      <div class="col s12 padding-top-50">
+        <div class="col s3">&nbsp;</div>
+        <div class="col s3">
+            <button data-target="modal1" class="btn modal-trigger waves-effect waves-light btn-large"><i class="material-icons left">control_point</i>Sign Up</button>
+        </div>
+        <div class="col s3">
+            <button data-target="modal2" class="btn modal-trigger waves-effect waves-light btn-large"><i class="material-icons left">control_point</i>Sign In</button>
+        </div>
+        <div class="col s3">&nbsp;</div>
+      </div><!--end marg-top-50-->
+    </div><!-- end row -->
+
+    <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h3>Sign Up</h3>
+      <p>Please fill out this form to create an account</p>
+      <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                <label for="first_name">Username</label>
+              </div>
+              <div class="input-field col s12">
+                  <input id="email" type="email" class="validate">
+                  <label for="email">Email</label>
+              </div>
             </div>
-            <div class="row center">
-                <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password" type="password" class="validate">
+                <label for="password">Password</label>
+              </div>
             </div>
-            <br>
-            <br>
+          </form>
         </div>
     </div>
-
-    <div class="container">
-        <div class="section">
-
-            <!--   Icon Section   -->
-            <div class="row">
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h2 class="center light-blue-text">
-                            <i class="mdi-image-flash-on"></i>
-                        </h2>
-                        <h5 class="center">Speeds up development</h5>
-
-                        <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom
-                            components. Additionally, we refined animations and transitions to provide a smoother experience
-                            for developers.</p>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h2 class="center light-blue-text">
-                            <i class="mdi-social-group"></i>
-                        </h2>
-                        <h5 class="center">User Experience Focused</h5>
-
-                        <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that
-                            incorporates components and animations that provide more feedback to users. Additionally, a single
-                            underlying responsive system across all platforms allow for a more unified user experience.</p>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h2 class="center light-blue-text">
-                            <i class="mdi-action-settings"></i>
-                        </h2>
-                        <h5 class="center">Easy to work with</h5>
-
-                        <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started.
-                            We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+    <div class="modal-footer">
+      <a href="#!" id="sign-up" class="modal-close waves-effect waves-green btn-flat">Sign Up!</a>
     </div>
-    <br>
-    <br>
+  </div><!--end sign up modal-->
 
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+  <!-- Modal Structure -->
+  <div id="modal2" class="modal">
+      <div class="modal-content">
+        <h3>Sign Ip</h3>
+        <p>Sign in to see your goal progress</p>
+        <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                  <label for="first_name">Username</label>
                 </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                    </ul>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="password" type="password" class="validate">
+                  <label for="password">Password</label>
                 </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                © 2014 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-        </div>
-    </footer>
+              </div>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" id="sign-in" class="modal-close waves-effect waves-green btn-flat">Sign In!</a>
+      </div>
+    </div><!--end sign in modal-->
+  
+ </div><!-- end hp-body -->
 
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!--jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="jquery-3.4.0.min.js">
+  $("#sign-in").on("click", function (event) {
+            event.preventDefault();
+			 $(document).ready(function () {
+            $('select').formSelect();
+            $('.modal').modal();
+        })
+      });
 
-    <!-- <script src="./assets/javascript/jquery.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="../public/js/index.js"></script>
+</script>
 </body>
 </html>
