@@ -3,13 +3,40 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
   <title>Home Page</title>
 </head>
 
 <body>
+  <nav>
+        <div class="nav-wrapper white">
+            <a id="brand-logo" href="#!" class="brand-logo red-text play-font">
+                <i id="logo-icon" class="material-icons ">check_circle</i>GoalBot</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger red-text">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#" class="red-text">Sign up</a></li>
+                <li><a href="#" class="red-text">Login</a></li>
+                <li><a href="./app.html" class="red-text">App</a></li>
+            </ul>
+        </div>
+    </nav>
+        <ul class="sidenav" id="mobile-demo">
+        <li><a href="#" class="red-text">Sign up</a></li>
+        <li><a href="#" class="red-text">Login</a></li>
+        <li><a href="collapsible.html" class="red-text">App</a></li>
+    </ul>
+
   {{{body}}}
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </body>
 
 </html>
