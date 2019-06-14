@@ -1,208 +1,262 @@
 <div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-    
+    <div class="container">
+        <div class="row">
+            <div class="col-8 offset-2">
 
 
 
 
-    <div class="">
-        <!-- row-1: Avatar & Stats -->
-        <div id="row-1" class="row">
-            <div class="col s4">
-                <img id="avatar" src="https://mmtcdn.blob.core.windows.net/084395e6770c4e0ebc5612f000acae8f/mmtcdn/Products20549-640x640-592019517.jpg"
-                    alt="">
-            </div>
-            <div class="col s7 play-font">
-                <br> Name: Chris Stead
-                <br> Level 10 Warrior
-                <br> HP:
-                <div class="progress">
-                    <div class="determinate" style="width: 70%"></div>
-                </div>
-                Experience:
-                <div class="progress">
-                    <div class="determinate" style="width: 40%"></div>
-                </div>
-            </div>
-        </div>
-        <!-- END row-1: Avatar & Stats -->
 
-        <!-- row-2: Menu Buttons & App -->
-        <div id="row-2" class="row">
-            <nav class="nav-extended">
-                <div class="nav-content">
-                    <ul class="tabs tabs-transparent">
-                        <li class="tab"><a class="active" href="#test1">To Do</a></li>
-                        <!-- <li class="tab"><a href="#test2">Daily Goal</a></li> -->
-                        <li class="tab"><a href="#test3">Bots</a></li>
-                        <li class="tab"><a href="#test4">Rewards</a></li>
-                    </ul>
-                </div>
-            </nav>
+                <div class="">
+                    <!-- row-1: Avatar & Stats -->
+                    <div id="row-1" class="row">
+                        <div class="col s4">
+                            <img id="avatar"
+                                src="https://mmtcdn.blob.core.windows.net/084395e6770c4e0ebc5612f000acae8f/mmtcdn/Products20549-640x640-592019517.jpg"
+                                alt="">
+                        </div>
+                        <div class="col s7 play-font">
+                            <br> Name: Chris Stead
+                            <br> Level 10 Warrior
+                            <br> HP:
+                            <div class="progress">
+                                <div class="determinate" style="width: 70%"></div>
+                            </div>
+                            Experience:
+                            <div class="progress">
+                                <div class="determinate" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END row-1: Avatar & Stats -->
 
-            <!-- To Do List Screen -->
-            <div id="test1" class="col s12">
-                {{!-- <ul class="collection with-header to-do-list"> --}}
-                    {{!-- <li class="collection-item"><div>Do homework<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                    <!-- row-2: Menu Buttons & App -->
+                    <div id="row-2" class="row">
+                        <nav class="nav-extended">
+                            <div class="nav-content">
+                                <ul class="tabs tabs-transparent">
+                                    <li class="tab"><a class="active" href="#test1">Goals</a></li>
+                                    <!-- <li class="tab"><a href="#test2">Daily Goal</a></li> -->
+                                    <li class="tab"><a href="#test3">Bots</a></li>
+                                    <li class="tab"><a href="#test4">Rewards</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+
+                        <!-- To Do List Screen -->
+                        <div id="test1" class="col s12">
+                            {{!-- <ul class="collection with-header to-do-list"> --}}
+                            {{!-- <li class="collection-item"><div>Do homework<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
                     <li class="collection-item"><div>Go for a jog<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
                     <li class="collection-item"><div>Eat lunch<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li> --}}
-                  <h3>Goals:</h3>
+                            {{!-- <h3>Goals:</h3> --}}
 
 
-        <ul id="goal-list" class="list-group collection with-header to-do-list">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="goal/{{this.id}}">{{this.goal}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-                
-                
-                
-                
+                            <ul id="goal-list" class="list-group collection with-header to-do-list">
+                                {{#each examples}}
+                                <li data-id="{{this.id}}" class="list-group-item">
+                                    <a href="goal/{{this.id}}">{{this.goal}}</a>
+                                    <button class="btn btn-danger float-right delete">ｘ</button>
+                                </li>
+                                {{/each}}
+                            </ul>
 
-            </div>
-            <!-- To Do List Screen END -->
 
-            <!-- <div id="test2" class="col s12">Test 2</div> -->
-            <div id="test3" class="col s12"></div>
-            <div id="test4" class="col s12"></div>
-        </div>
-        <!-- END row-2: Menu Buttons -->
 
-    </div>
-    <!-- Container ending div -->
 
-    <!-- Floating Action Button -->
-    <div class="fixed-action-btn">
-        <a id="main-fab" class="btn-floating btn-large amber darken-1">
-            <i class="large material-icons">mode_edit</i>
-        </a>
-        <ul>
-            <li>
-                <a id="#new-to-do" class="btn-floating red tooltipped modal-trigger" href="#todo-creation-modal" data-position="left" data-tooltip="New To Do">
-                    <i class="material-icons">check_circle</i>
-                </a>
-            </li>
-            <li>
-                <a class="btn-floating red tooltipped green" data-position="left" data-tooltip="New Daily Goal">
-                    <i class="material-icons">access_time</i>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <!-- END: Floating Action Button -->
 
-    <!-- Modal 1: Create a New To Do -->
-    <div id="todo-creation-modal" class="modal">
-        <!-- modal-content -->
-        <div class="modal-content">
-            <!-- Create To Do Modal Content -->
-            <h4>Create a New To Do</h4>
-            {{!-- <div class="row">
-                <div class="input-field col s12">
-                    <input id="task-title" type="text" class="validate">
-                    <label class="active" for="task-title">Task Title</label>
+                        </div>
+                        <!-- To Do List Screen END -->
+
+                        <!-- <div id="test2" class="col s12">Test 2</div> -->
+                        <div id="test3" class="col s12"></div>
+                        <div id="test4" class="col s12"></div>
+                    </div>
+                    <!-- END row-2: Menu Buttons -->
+
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
-                    <label for="textarea2">Description</label>
-                </div>
-            </div> --}}
+                <!-- Container ending div -->
 
-            <!--Subtasks row -->
-            <div class="row">
-                <div class="col s12">
-                    <ul id="subtasks" class="collection with-header">
-                        <li class="collection-header">
-                            <h4>Subtasks</h4>
+                <!-- Floating Action Button -->
+                <div class="fixed-action-btn">
+                    <a id="main-fab" class="btn-floating btn-large amber darken-1">
+                        <i class="large material-icons">mode_edit</i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a id="#new-to-do" class="btn-floating red tooltipped modal-trigger"
+                                href="#todo-creation-modal" data-position="left" data-tooltip="New To Do">
+                                <i class="material-icons">check_circle</i>
+                            </a>
                         </li>
-                        <div id="new-subtasks"></div>
-                        <li id="subtask-input-container" class="collection-item">
-                            <div class="input-field">
-                                <input id="create-subtask-input" class="col s8" type="text">
-                                <label class="active" for="create-subtask-input">Create a Subtask</label>
-
-                                <a id="add-subtask" href="#!" class="secondary-content">
-                                    <i class="material-icons red-text">send</i>
-                                </a>
-                            </div>
+                        <li>
+                            <a class="btn-floating red tooltipped green" data-position="left"
+                                data-tooltip="New Daily Goal">
+                                <i class="material-icons">access_time</i>
+                            </a>
                         </li>
                     </ul>
                 </div>
-            </div>
-            <!-- Subtasks Row END -->
+                <!-- END: Floating Action Button -->
 
-            <!-- Date Picker -->
-            <div class="input-field col s6">
-                <input id="#new-task-due-date" class="col s8 datepicker" type="text">
-                <label class="active" for="create-subtask-input">Due Date</label>
-            </div>
-            <!-- Date Picker END -->
+                <!-- Modal 1: Create a New To Do -->
+                <div id="todo-creation-modal" class="modal">
+                    <!-- modal-content -->
+                    <div class="modal-content">
+                        <!-- Create To Do Modal Content -->
+                        <h4>Create a New Goal</h4>
+
+                        <div class="row">
+                            <form class="clearfix mb-4" action="POST">
+                                <div class="form-group">
+                                    <label for="goal">Goal</label>
+                                    <input type="text" id="goal" class="form-control" aria-describedby="goal"
+                                        placeholder="Enter Example Text">
+                                </div>
+                        </div>
+
+                        <!--Subtasks row -->
+                        <div class="row">
+                            <div class="col s12">
+                                <ul id="subtasks" class="collection with-header">
+                                    <li class="collection-header">
+                                        <h5>Setting a goal can be hard.  Lets break down your goal into 5 manageable tasks!</h5>
+                                    </li>
+                                    <div id="new-subtasks"></div>
+                                    <li id="subtask-input-container" class="collection-item">
+
+                                        <div class="form-group">
+                                            <label for="ms1">Milestone 1</label>
+                                            <textarea type='date' class="form-control" id="ms1" aria-describedby="ms1"
+                                                placeholder="Enter First milstone"></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="ms2">Milestone 2</label>
+                                            <textarea class="form-control" id="ms2" aria-describedby="ms2"
+                                                placeholder="Enter 2nd Milestone"></textarea>
+                                        </div>
 
 
-        </div>
-        <!-- END modal-content -->
 
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-            <a id="create-new-todo-btn" href="#!" class="modal-close waves-effect waves-green btn-flat">Create</a>
-        </div>
-    </div>
+                                        <div class="form-group">
+                                            <label for="ms3">Milestone 3</label>
+                                            <textarea class="form-control" id="ms3" aria-describedby="ms3"
+                                                placeholder="Enter 3rd Milestone"></textarea>
+                                        </div>
 
 
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="goal">Goal</label>
-            <input type="text" id="goal" class="form-control" aria-describedby="goal" placeholder="Enter Example Text">
-          </div>
+
+                                        <div class="form-group">
+                                            <label for="ms4">Milestone 4</label>
+                                            <textarea class="form-control" id="ms4" aria-describedby="ms4"
+                                                placeholder="Enter 4th Milestone"></textarea>
+                                        </div>
 
 
-          <div class="form-group">
-            <label for="end-date">Goal EndDate</label>
-            <input type= "date" class="form-control" id="end-date" aria-describedby="end-date" placeholder="Enter Example Description"></input type= "date">
-          </div>
-       
 
-          <div class="form-group">
-            <label for="ms1">Milestone 1</label>
-            <textarea type= 'date' class="form-control" id="ms1" aria-describedby="ms1" placeholder="Enter First milstone"></textarea>
-          </div>
+                                        <div class="form-group">
+                                            <label for="ms5">Milestone 5</label>
+                                            <textarea class="form-control" id="ms5" aria-describedby="ms5"
+                                                placeholder="Enter Milestone 5"></textarea>
+                                        </div>
 
-          <div class="form-group">
-            <label for="ms2">Mielstone 2</label>
-            <textarea class="form-control" id="ms2" aria-describedby="ms2" placeholder="Enter 2nd Milestone"></textarea>
-          </div>
-        
-      
+                                        </form>
 
-          <div class="form-group">
-            <label for="ms3">Milestone 3</label>
-            <textarea class="form-control" id="ms3" aria-describedby="ms3" placeholder="Enter 3rd Milestone"></textarea>
-          </div>
-          
-      
 
-          <div class="form-group">
-            <label for="ms4">Milestone 4</label>
-            <textarea class="form-control" id="ms4" aria-describedby="ms4" placeholder="Enter 4th Milestone"></textarea>
-          </div>
-  
-     
 
-          <div class="form-group">
-            <label for="ms5">Milestone 5</label>
-            <textarea class="form-control" id="ms5" aria-describedby="ms5" placeholder="Enter Milestone 5"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
 
-        {{!-- <h3>Goals:</h3>
+
+
+
+
+
+
+
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Subtasks Row END -->
+
+                        <!-- Date Picker -->
+                        {{!-- <div class="input-field col s6">
+                            <input id="#new-task-due-date" class="col s8 datepicker" type="text">
+                            <label class="active" for="create-subtask-input">Due Date</label>
+                        </div> --}}
+                        <div class="form-group input-field col s6 ">
+                            <label for="end-date"></label>
+                            <input class="form-control datepicker" id="end-date" aria-describedby="end-date"
+                                placeholder="When would you like to reach this goal?"></input type="date">
+                        </div>
+                        <!-- Date Picker END -->
+
+
+                    </div>
+                    <!-- END modal-content -->
+
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                        <a id="submit" href="#!" class="modal-close waves-effect waves-green btn-flat">Create</a>
+                    </div>
+                </div>
+
+
+                {{!-- <form class="clearfix mb-4" action="POST">
+                    <div class="form-group">
+                        <label for="goal">Goal</label>
+                        <input type="text" id="goal" class="form-control" aria-describedby="goal"
+                            placeholder="Enter Example Text">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="end-date">Goal EndDate</label>
+                        <input type="date" class="form-control" id="end-date" aria-describedby="end-date"
+                            placeholder="Enter Example Description"></input type="date">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="ms1">Milestone 1</label>
+                        <textarea type='date' class="form-control" id="ms1" aria-describedby="ms1"
+                            placeholder="Enter First milstone"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ms2">Mielstone 2</label>
+                        <textarea class="form-control" id="ms2" aria-describedby="ms2"
+                            placeholder="Enter 2nd Milestone"></textarea>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="ms3">Milestone 3</label>
+                        <textarea class="form-control" id="ms3" aria-describedby="ms3"
+                            placeholder="Enter 3rd Milestone"></textarea>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="ms4">Milestone 4</label>
+                        <textarea class="form-control" id="ms4" aria-describedby="ms4"
+                            placeholder="Enter 4th Milestone"></textarea>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="ms5">Milestone 5</label>
+                        <textarea class="form-control" id="ms5" aria-describedby="ms5"
+                            placeholder="Enter Milestone 5"></textarea>
+                    </div>
+                    
+                </form> --}}
+
+                {{!-- <h3>Goals:</h3>
 
 
         <ul id="goal-list" class="list-group">
@@ -213,11 +267,11 @@
           </li>
           {{/each}}
         </ul> --}}
-      </div>
+            </div>
 
 
+        </div>
     </div>
-  </div>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
