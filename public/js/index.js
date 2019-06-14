@@ -43,21 +43,37 @@ var refreshExamples = function() {
         .text(example.goal)
         .attr("href", "/example/" + example.id);
 
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
+  // The code below handles the case where we want to get blog posts for a specific user
+  // Looks for a query param in the url for user_id
+  var url = window.location.search;
+  var userId;
+  if (url.indexOf("?user_id=") !== -1) {
+    userId = url.split("=")[1];
+    getPosts(userId);
+  }
+  // If there's no userId we just get all posts as usual
+  else {
+    getPosts();
+  }
 
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
 
-      $li.append($button);
-
-      return $li;
+  // This function grabs posts from the database and updates the view
+  function getPosts(user) {
+    userId = user || "";
+    if (userId) {
+      userId = "/?user_id=" + userId;
+    }
+    $.get("/api/posts" + userId, function(data) {
+      console.log("Posts", data);
+      posts = data;
+      if (!posts || !posts.length) {
+        displayEmpty(user);
+      }
+      else {
+        initializeRows();
+      }
     });
+  }
 
     $goalList.empty();
     $goalList.append($examples);
@@ -84,9 +100,47 @@ var handleFormSubmit = function(event) {
     return;
   }
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
-  });
+  // This function constructs a post's HTML
+  function createNewRow(post) {
+    var formattedDate = new Date(post.createdAt);
+    formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
+    var newPostCard = $("<div>");
+    newPostCard.addClass("card");
+    var newPostCardHeading = $("<div>");
+    newPostCardHeading.addClass("card-header");
+    var deleteBtn = $("<button>");
+    deleteBtn.text("x");
+    deleteBtn.addClass("delete btn btn-danger");
+    var editBtn = $("<button>");
+    editBtn.text("EDIT");
+    editBtn.addClass("edit btn btn-info");
+    var newPostTitle = $("<h2>");
+    var newPostDate = $("<small>");
+    var newPostuser = $("<h5>");
+    newPostuser.text("Written by: " + post.user.name);
+    newPostuser.css({
+      float: "right",
+      color: "blue",
+      "margin-top":
+      "-10px"
+    });
+    var newPostCardBody = $("<div>");
+    newPostCardBody.addClass("card-body");
+    var newPostBody = $("<p>");
+    newPostTitle.text(post.title + " ");
+    newPostBody.text(post.body);
+    newPostDate.text(formattedDate);
+    newPostTitle.append(newPostDate);
+    newPostCardHeading.append(deleteBtn);
+    newPostCardHeading.append(editBtn);
+    newPostCardHeading.append(newPostTitle);
+    newPostCardHeading.append(newPostuser);
+    newPostCardBody.append(newPostBody);
+    newPostCard.append(newPostCardHeading);
+    newPostCard.append(newPostCardBody);
+    newPostCard.data("post", post);
+    return newPostCard;
+  }
 
   $goal.val("");
   $endDate.val("");
@@ -97,17 +151,29 @@ var handleFormSubmit = function(event) {
   $ms5.val("");
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
+  // This function figures out which post we want to edit and takes it to the appropriate url
+  function handlePostEdit() {
+    var currentGoal = $(this)
+      .parent()
+      .parent()
+      .data("post");
+    window.location.href = "/addGoal?goal_id=" + currentGoal.id;
+  }
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
-  });
-};
+  // This function displays a message when there are no posts
+  function displayEmpty(id) {
+    var query = window.location.search;
+    var partial = "";
+    if (id) {
+      partial = " for user #" + id;
+    }
+    goalContainer.empty();
+    var messageH2 = $("<h2>");
+    messageH2.css({ "text-align": "center", "margin-top": "50px" });
+    messageH2.html("No posts yet" + partial + ", navigate <a href='/addGoals" + query +
+    "'>here</a> in order to get started.");
+    goalContainer.append(messageH2);
+  }
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
