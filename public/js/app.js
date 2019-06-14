@@ -1,3 +1,11 @@
+// Get references to page elements
+var $goal = $("#task-title");
+var $endDate = $("#new-task-due-date");
+var $submitBtn = $("#create-new-todo-button");
+var $goalList = $("#goal-list");
+
+var subtaskList = [];
+
 $(document).ready(() => {
     // Materialize init
     $('.sidenav').sidenav();
@@ -14,6 +22,8 @@ $(document).ready(() => {
     // Event Listener for Adding Subtasks within "To Do Creation Modal"
     $('#add-subtask').click(() => {
         let input = $("#create-subtask-input").val().trim();
+        subtaskList.push(input);
+
         $('#new-subtasks').append(
             `<li class="collection-item">
                 <div>${input}
@@ -49,6 +59,112 @@ $(document).ready(() => {
 
     //==============================================================||
     //==============================================================||
+
+
+
+    // The API object contains methods for each kind of request we'll make
+    var API = {
+        saveExample: function (example) {
+            return $.ajax({
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                type: "POST",
+                url: "api/goals",
+                data: JSON.stringify(example)
+            });
+        },
+        getExamples: function () {
+            return $.ajax({
+                url: "api/goals",
+                type: "GET"
+            });
+        },
+        deleteExample: function (id) {
+            return $.ajax({
+                url: "api/goals/" + id,
+                type: "DELETE"
+            });
+        }
+    };
+
+    // refreshExamples gets new examples from the db and repopulates the list
+    var refreshExamples = function () {
+        API.getExamples().then(function (data) {
+            var $examples = data.map(function (example) {
+                var $a = $("<a>")
+                    .text(example.goal)
+                    .attr("href", "/example/" + example.id);
+
+                var $li = $("<li>")
+                    .attr({
+                        class: "list-group-item",
+                        "data-id": example.id
+                    })
+                    .append($a);
+
+                var $button = $("<button>")
+                    .addClass("btn btn-danger float-right delete")
+                    .text("ｘ");
+
+                $li.append($button);
+
+                return $li;
+            });
+
+            $goalList.empty();
+            $goalList.append($examples);
+        });
+    };
+
+    // handleFormSubmit is called whenever we submit a new example
+    // Save the new example to the db and refresh the list
+    var handleFormSubmit = function (event) {
+        event.preventDefault();
+
+        var example = {
+            goal: $goal.val().trim(),
+            completetionDate: $endDate.val().trim(),
+            ms1: subtaskList[0],
+            ms2: subtaskList[1],
+            ms3: subtaskList[2],
+            ms4: subtaskList[3],
+            ms5: subtaskList[4]
+        };
+
+        if (!(example.goal && example.completetionDate)) {
+            alert("You must enter a Goal and!");
+            return;
+        }
+
+        API.saveExample(example).then(function () {
+            refreshExamples();
+        });
+
+        $goal.val("");
+        $endDate.val("");
+        $ms1.val("");
+        $ms2.val("");
+        $ms3.val("");
+        $ms4.val("");
+        $ms5.val("");
+    };
+
+    // handleDeleteBtnClick is called when an example's delete button is clicked
+    // Remove the example from the db and refresh the list
+    var handleDeleteBtnClick = function () {
+        var idToDelete = $(this)
+            .parent()
+            .attr("data-id");
+
+        API.deleteExample(idToDelete).then(function () {
+            refreshExamples();
+        });
+    };
+
+    // Add event listeners to the submit and delete buttons
+    $submitBtn.on("click", handleFormSubmit);
+    $goalList.on("click", ".delete", handleDeleteBtnClick);
 
 
 
