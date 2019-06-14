@@ -6,8 +6,8 @@ CREATE DATABASE testdb;
 
 
 ### Schema
-CREATE DATABASE quotes_db;
-USE quotes_db;
+CREATE DATABASE BrainFood_db;
+USE BrainFood_db;
 
 CREATE TABLE quotes
 (
@@ -16,3 +16,15 @@ CREATE TABLE quotes
 	quote TEXT NOT NULL,
 	PRIMARY KEY (id)
 );
+
+USE BrainFood_db;
+CREATE TABLE avatar
+(
+	id int NOT NULL AUTO_INCREMENT,
+	avatarName  varchar(255) NOT NULL,
+    points varchar(255) Not Null, 
+	avatarImage blob not null,
+	PRIMARY KEY (id)
+);
+
+select * from avatar;
