@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "done",
+    "database": "goalBotDB",
     "host": "localhost",
     "dialect": "mysql"
   },
