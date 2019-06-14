@@ -6,8 +6,12 @@
 // =============================================================
 var express = require("express");
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 // var exphbs = require("express-handlebars");
+=======
+var exphbs = require("express-handlebars");
+>>>>>>> f40d6302aa4595bc43330facd71d4e811ceede11
 
 var db = require("./models");
 >>>>>>> e31f47cb899f01953c29ae5d24fd5133f3cae290
@@ -28,6 +32,7 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
+<<<<<<< HEAD
 // Routes
 // =============================================================
 require("./routes/addGoal.js")(app);
@@ -46,12 +51,20 @@ db.sequelize.sync({ force: true }).then(function() {
 //   })
 // );
 // app.set("view engine", "handlebars");
+=======
+// Handlebars
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main"
+  })
+);
+app.set("view engine", "handlebars");
+>>>>>>> f40d6302aa4595bc43330facd71d4e811ceede11
 
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
-require("./routes/goal-api-routes")(app);
-require("./routes/user-api-routes")(app);
 
 var syncOptions = { force: false };
 

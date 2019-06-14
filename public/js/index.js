@@ -1,14 +1,47 @@
-$(document).ready(function() {
-  /* global moment */
+// Get references to page elements
+var $goal = $("#goal");
+var $endDate = $("#end-date");
+var $ms1 = $("#ms1");
+var $ms2 = $("#ms2");
+var $ms3 = $("#ms3");
+var $ms4 = $("#ms4");
+var $ms5 = $("#ms5");
+var $submitBtn = $("#submit");
+var $goalList = $("#goal-list");
 
-  // goalContainer holds all of our goals
-  var goalContainer = $(".goal-container");
-  var postCategorySelect = $("#category");
-  // Click events for the edit and delete buttons
-  $(document).on("click", "button.delete", handlePostDelete);
-  $(document).on("click", "button.edit", handlePostEdit);
-  // Variable to hold our posts
-  var posts;
+// The API object contains methods for each kind of request we'll make
+var API = {
+  saveExample: function(example) {
+    return $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "api/goals",
+      data: JSON.stringify(example)
+    });
+  },
+  getExamples: function() {
+    return $.ajax({
+      url: "api/goals",
+      type: "GET"
+    });
+  },
+  deleteExample: function(id) {
+    return $.ajax({
+      url: "api/goals/" + id,
+      type: "DELETE"
+    });
+  }
+};
+
+// refreshExamples gets new examples from the db and repopulates the list
+var refreshExamples = function() {
+  API.getExamples().then(function(data) {
+    var $examples = data.map(function(example) {
+      var $a = $("<a>")
+        .text(example.goal)
+        .attr("href", "/example/" + example.id);
 
   // The code below handles the case where we want to get blog posts for a specific user
   // Looks for a query param in the url for user_id
@@ -42,25 +75,29 @@ $(document).ready(function() {
     });
   }
 
-  // This function does an API call to delete posts
-  function deletePost(id) {
-    $.ajax({
-      method: "DELETE",
-      url: "/api/posts/" + id
-    })
-      .then(function() {
-        getPosts(postCategorySelect.val());
-      });
-  }
+    $goalList.empty();
+    $goalList.append($examples);
+  });
+};
 
-  // InitializeRows handles appending all of our constructed post HTML inside blogContainer
-  function initializeRows() {
-    goalContainer.empty();
-    var postsToAdd = [];
-    for (var i = 0; i < posts.length; i++) {
-      postsToAdd.push(createNewRow(posts[i]));
-    }
-    goalContainer.append(postsToAdd);
+// handleFormSubmit is called whenever we submit a new example
+// Save the new example to the db and refresh the list
+var handleFormSubmit = function(event) {
+  event.preventDefault();
+
+  var example = {
+    goal: $goal.val().trim(),
+    completetionDate: $endDate.val().trim(),
+    ms1: $ms1.val().trim(),
+    ms2: $ms2.val().trim(),
+    ms3: $ms3.val().trim(),
+    ms4: $ms4.val().trim(),
+    ms5: $ms5.val().trim()
+  };
+
+  if (!(example.goal && example.completetionDate)) {
+    alert("You must enter a Goal and!");
+    return;
   }
 
   // This function constructs a post's HTML
@@ -105,14 +142,14 @@ $(document).ready(function() {
     return newPostCard;
   }
 
-  // This function figures out which post we want to delete and then calls deletePost
-  function handlePostDelete() {
-    var currentGoal = $(this)
-      .parent()
-      .parent()
-      .data("post");
-    deletePost(currentGoal.id);
-  }
+  $goal.val("");
+  $endDate.val("");
+  $ms1.val("");
+  $ms2.val("");
+  $ms3.val("");
+  $ms4.val("");
+  $ms5.val("");
+};
 
   // This function figures out which post we want to edit and takes it to the appropriate url
   function handlePostEdit() {
@@ -138,4 +175,70 @@ $(document).ready(function() {
     goalContainer.append(messageH2);
   }
 
-});
+// Add event listeners to the submit and delete buttons
+$submitBtn.on("click", handleFormSubmit);
+$goalList.on("click", ".delete", handleDeleteBtnClick);
+
+
+
+
+
+
+
+
+
+$(document).ready(() => {
+  // Materialize init
+  $('.sidenav').sidenav();
+  $('.tabs').tabs();
+  $('.fixed-action-btn').floatingActionButton();
+  $('.tooltipped').tooltip();
+  $('.modal').modal();
+  $('.datepicker').datepicker();
+
+  //==============================================================||
+  // Creating a New To Do
+  //==============================================================||
+
+  // Event Listener for Adding Subtasks within "To Do Creation Modal"
+  $('#add-subtask').click(() => {
+      let input = $("#create-subtask-input").val().trim();
+      $('#new-subtasks').append(
+          `<li class="collection-item">
+              <div>${input}
+                  <a href="#!" class="secondary-content">
+                      <i class="material-icons red-text delete-subtask">delete</i>
+                  </a>
+              </div>
+          </li>`
+      )
+
+      $('#create-subtask-input').val('');
+  });
+
+  //  Event Listener for Deleting Subtasks within "To Do Creation Modal"
+  $('#todo-creation-modal').on('click', '.delete-subtask', () => {
+      $(this).remove();
+  });
+
+  // Event Listener to render the To Do Item to the App
+  $('#todo-creation-modal').on('click', '#create-new-todo-btn', () => {
+      let newTask = $('#task-title').val().trim();
+      console.log(newTask)
+      $('#to-do-list').append(
+          `<li class="collection-item">
+              <div>${newTask}
+                  <a href="#!" class="secondary-content">
+                      <i class="material-icons red-text">send</i>
+                  </a>
+              </div>
+          </li>`
+      )
+  });
+
+  //==============================================================||
+  //==============================================================||
+
+
+
+})
