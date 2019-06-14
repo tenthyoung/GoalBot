@@ -1,33 +1,3 @@
 .list-group-item {
   line-height: 2.5;
 }
-
-.play-font {
-  font-family: 'Play', sans-serif;
-}
-
-nav {
-  background-color: #3E3E3E !important;
-  font-family: 'Play', sans-serif;
-}
-
-.center {
-  text-align: center;
-}
-
-.pad-top-100 {
-  padding-top: 100px;
-}
-
-#hp-body {
-  font-family: 'Play', sans-serif;
-}
-
-.padding-top-50 {
-  margin-top: 50px;
-}
-
-.btn-large {
-  font-family: 'Play', sans-serif;
-  font-size: 2em !important;
-}
