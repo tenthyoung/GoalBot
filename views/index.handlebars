@@ -1,0 +1,75 @@
+<div id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2">
+        <h1>{{msg}}</h1>
+        <h2>This is our Home Page!</h2>
+
+
+
+        <form class="clearfix mb-4" action="POST">
+          <div class="form-group">
+            <label for="goal">Goal</label>
+            <input type="text" id="goal" class="form-control" aria-describedby="goal" placeholder="Enter Example Text">
+          </div>
+
+
+          <div class="form-group">
+            <label for="end-date">Goal EndDate</label>
+            <input type= "date" class="form-control" id="end-date" aria-describedby="end-date" placeholder="Enter Example Description"></input type= "date">
+          </div>
+       
+
+          <div class="form-group">
+            <label for="ms1">Milestone 1</label>
+            <textarea type= 'date' class="form-control" id="ms1" aria-describedby="ms1" placeholder="Enter First milstone"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="ms2">Mielstone 2</label>
+            <textarea class="form-control" id="ms2" aria-describedby="ms2" placeholder="Enter 2nd Milestone"></textarea>
+          </div>
+        
+      
+
+          <div class="form-group">
+            <label for="ms3">Milestone 3</label>
+            <textarea class="form-control" id="ms3" aria-describedby="ms3" placeholder="Enter 3rd Milestone"></textarea>
+          </div>
+          
+      
+
+          <div class="form-group">
+            <label for="ms4">Milestone 4</label>
+            <textarea class="form-control" id="ms4" aria-describedby="ms4" placeholder="Enter 4th Milestone"></textarea>
+          </div>
+  
+     
+
+          <div class="form-group">
+            <label for="ms5">Milestone 5</label>
+            <textarea class="form-control" id="ms5" aria-describedby="ms5" placeholder="Enter Milestone 5"></textarea>
+          </div>
+          <button id="submit" class="btn btn-primary float-right">Submit</button>
+        </form>
+
+        <h3>Goals:</h3>
+
+
+        <ul id="goal-list" class="list-group">
+          {{#each examples}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="goal/{{this.id}}">{{this.goal}}</a>
+            <button class="btn btn-danger float-right delete">ｘ</button>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>

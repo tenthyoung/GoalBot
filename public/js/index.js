@@ -1,8 +1,13 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+var $goal = $("#goal");
+var $endDate = $("#end-date");
+var $ms1 = $("#ms1");
+var $ms2 = $("#ms2");
+var $ms3 = $("#ms3");
+var $ms4 = $("#ms4");
+var $ms5 = $("#ms5");
 var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+var $goalList = $("#goal-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -12,19 +17,19 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
+      url: "api/goals",
       data: JSON.stringify(example)
     });
   },
   getExamples: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/goals",
       type: "GET"
     });
   },
   deleteExample: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/goals/" + id,
       type: "DELETE"
     });
   }
@@ -35,7 +40,7 @@ var refreshExamples = function() {
   API.getExamples().then(function(data) {
     var $examples = data.map(function(example) {
       var $a = $("<a>")
-        .text(example.text)
+        .text(example.goal)
         .attr("href", "/example/" + example.id);
 
       var $li = $("<li>")
@@ -54,8 +59,8 @@ var refreshExamples = function() {
       return $li;
     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    $goalList.empty();
+    $goalList.append($examples);
   });
 };
 
@@ -65,12 +70,17 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+    goal: $goal.val().trim(),
+    completetionDate: $endDate.val().trim(),
+    ms1: $ms1.val().trim(),
+    ms2: $ms2.val().trim(),
+    ms3: $ms3.val().trim(),
+    ms4: $ms4.val().trim(),
+    ms5: $ms5.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  if (!(example.goal && example.completetionDate)) {
+    alert("You must enter a Goal and!");
     return;
   }
 
@@ -78,8 +88,13 @@ var handleFormSubmit = function(event) {
     refreshExamples();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $goal.val("");
+  $endDate.val("");
+  $ms1.val("");
+  $ms2.val("");
+  $ms3.val("");
+  $ms4.val("");
+  $ms5.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -96,4 +111,4 @@ var handleDeleteBtnClick = function() {
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$goalList.on("click", ".delete", handleDeleteBtnClick);
