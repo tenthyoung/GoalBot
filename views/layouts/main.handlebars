@@ -3,40 +3,52 @@
 
 <head>
   <meta charset="utf-8">
-  
+  {{!------------------------------ MATERIALIZE CSS CDN----------------------- --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  {{!------------------------------ MATERIALIZE ICONS----------------------- --}}
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+  {{!------------------------------ GOOGLE FONTS----------------------- --}}
+  <link href="https://fonts.googleapis.com/css?family=Play:400,700&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="/public/styles/styles.css" media="screen" title="no title" charset="utf-8">
   <title>Home Page</title>
 </head>
 
 <body>
   <nav>
-        <div class="nav-wrapper white">
-            <a id="brand-logo" href="#!" class="brand-logo red-text play-font">
-                <i id="logo-icon" class="material-icons ">check_circle</i>GoalBot</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger red-text">
-                <i class="material-icons">menu</i>
-            </a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#" class="red-text">Sign up</a></li>
-                <li><a href="#" class="red-text">Login</a></li>
-                <li><a href="./app.html" class="red-text">App</a></li>
-            </ul>
-        </div>
-    </nav>
-        <ul class="sidenav" id="mobile-demo">
-        <li><a href="#" class="red-text">Sign up</a></li>
-        <li><a href="#" class="red-text">Login</a></li>
-        <li><a href="collapsible.html" class="red-text">App</a></li>
-    </ul>
+    <div class="nav-wrapper white">
+      <a id="brand-logo" href="#!" class="brand-logo red-text play-font">
+        <i id="logo-icon" class="material-icons ">check_circle</i>GoalBot</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger red-text">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#modalSignUp" class="red-text modal-trigger" data-target="modalSignUp">Sign up</a></li>
+        <li><a href="#modalLogin" class="red-text modal-trigger" data-target="modalLogin">Login</a></li>
+        <li><a href="/logout" class="red-text">Log Out</a></li>
+        <li><a href="./app.html" class="red-text">App</a></li>
+      </ul>
+    </div>
+  </nav>
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="#modalSignUp" class="red-text modal-trigger" data-target="modalSignUp">Sign up</a></li>
+    <li><a href="#modalLogin" class="red-text modal-trigger" data-target="modalLogin">Login</a></li>
+    <li><a href="collapsible.html" class="red-text">App</a></li>
+  </ul>
+
+
 
   {{{body}}}
 
-
+  {{!------------------------------ MATERIALIZE  JAVASCRIPT CDN----------------------- --}}
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+  <script src="../../public/js/index.js"></script>
+  <script src="../../public/js/signup.js"></script>
+  <script src="../../public/js/login.js"></script>
 </body>
 
 </html>

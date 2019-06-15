@@ -3,22 +3,22 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all examples
   app.get("/api/goals", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+    db.Goal.findAll({}).then(function(dbGoals) {
+      res.json(dbGoals);
     });
   });
 
-  // Create a new example
+  // Create a new Goal
   app.post("/api/goals", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+    db.Goal.create(req.body).then(function(dbGoal) {
+      res.json(dbGoal);
     });
   });
 
-  // Delete an example by id
+  // Delete an Goal by id
   app.delete("/api/goals/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+    db.Goal.destroy({ where: { id: req.params.id } }).then(function(dbGoal) {
+      res.json(dbGoal);
     });
   });
 };
