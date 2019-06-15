@@ -8,16 +8,6 @@ body {
     font-family: 'Play', sans-serif;
 }
 
-#brand-logo, .red-text {
-    color: #3E3E3E !important;
-    margin-left: 5px;
-}
-
-#logo-icon {
-    color: #ffb300 !important;
-}
-
-
 /* App */
 .nav-extended {
     background-color: #3E3E3E !important;
@@ -27,4 +17,26 @@ body {
     width: 170px;
     margin-top: 5px;
 }
+/* 
+#avatarAndStats {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    justify-items: center !important;
+} */
 
+#brand-logo, .red-text {
+    color: #3E3E3E !important;
+    margin-left: 5px;
+}
+
+#jumbotron {
+    background-image: url(../images/homeSpace1.png);
+    background-size: cover;
+    background-position: center;
+
+}
+
+#logo-icon {
+    color: #ffb300 !important;
+}

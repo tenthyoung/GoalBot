@@ -20,6 +20,7 @@
 </head>
 
 <body>
+	<!-- Navbar -->
 	<nav>
 		<div class="nav-wrapper white">
 			<a id="brand-logo" href="#!" class="brand-logo red-text play-font">
@@ -30,7 +31,7 @@
 			<ul class="right hide-on-med-and-down">
 				<li><a href="#" class="red-text">Sign up</a></li>
 				<li><a href="#" class="red-text">Login</a></li>
-				<li><a href="./app.html" class="red-text">App</a></li>
+				<li><a href="./app.html" class="red-text">Play</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -38,30 +39,114 @@
 	<ul class="sidenav" id="mobile-demo">
 		<li><a href="#" class="red-text">Sign up</a></li>
 		<li><a href="#" class="red-text">Login</a></li>
-		<li><a href="collapsible.html" class="red-text">App</a></li>
+		<li><a href="collapsible.html" class="red-text">Play</a></li>
 	</ul>
+	<!-- Navbar END -->
 
-	<div class="">
-		<!-- row-1: Avatar & Stats -->
-		<div id="row-1" class="row">
-			<div class="col s4">
-				<img id="avatar"
-					src="https://mmtcdn.blob.core.windows.net/084395e6770c4e0ebc5612f000acae8f/mmtcdn/Products20549-640x640-592019517.jpg"
-					alt="">
+	<!-- Home Page -->
+	<div id="jumbotron" class="section no-pad-bot" id="index-banner">
+		<div class="container">
+			<br>
+			<br>
+			<h1 class="header center amber-text text-darken-1">Incentivize Your Goals</h1>
+			<div class="row center">
+				<h5 class="header col s12 light white-text">A robotic approach to a motivational problem.</h5>
 			</div>
-			<div class="col s7 play-font">
-				<br> Name: Chris Stead
-				<br> Level 10 Warrior
-				<br> HP:
-				<div class="progress">
-					<div class="determinate" style="width: 70%"></div>
+			<div class="row center">
+				<a href="#" id="download-button" class="btn-large waves-effect waves-light amber darken-1">Get Started</a>
+			</div>
+			<br>
+			<br>
+
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="section">
+
+			<!--   Icon Section   -->
+			<div class="row">
+				<div class="col s12 m4">
+					<div class="icon-block">
+						<h2 class="center light-blue-text">
+							<i class="mdi-image-flash-on"></i>
+						</h2>
+						<h5 class="center">Speeds up development</h5>
+
+						<p class="light">We did most of the heavy lifting for you to provide a default stylings that
+							incorporate our custom
+							components. Additionally, we refined animations and transitions to provide a smoother
+							experience
+							for developers.</p>
+					</div>
 				</div>
-				Experience:
-				<div class="progress">
-					<div class="determinate" style="width: 40%"></div>
+
+				<div class="col s12 m4">
+					<div class="icon-block">
+						<h2 class="center light-blue-text">
+							<i class="mdi-social-group"></i>
+						</h2>
+						<h5 class="center">User Experience Focused</h5>
+
+						<p class="light">By utilizing elements and principles of Material Design, we were able to create
+							a framework that
+							incorporates components and animations that provide more feedback to users. Additionally, a
+							single
+							underlying responsive system across all platforms allow for a more unified user experience.
+						</p>
+					</div>
+				</div>
+
+				<div class="col s12 m4">
+					<div class="icon-block">
+						<h2 class="center light-blue-text">
+							<i class="mdi-action-settings"></i>
+						</h2>
+						<h5 class="center">Easy to work with</h5>
+
+						<p class="light">We have provided detailed documentation as well as specific code examples to
+							help new users get started.
+							We are also always open to feedback and can answer any questions a user may have about
+							Materialize.</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<br>
+	<br>
+	<!-- Home Page END -->
+
+	<!-- Sign Up -->
+	<div class="container hide" id="signUpContainer">
+		<h1>Sign Up</h1>
+	</div>
+	<!-- Sign Up END -->
+
+
+	<div class="hide">
+		<!-- row-1: Avatar & Stats -->
+		<div id="avatarAndStats" class="container">
+			<div id="" class="row">
+				<div class="col s4">
+					<img id="avatar" src="./images/robotsmall.png" alt="">
+				</div>
+				<div class="col s4 play-font">
+					<br> Name: Chris Stead
+					<br> Level 10 Warrior
+					<br> HP:
+					<div class="progress">
+						<div class="determinate" style="width: 70%"></div>
+					</div>
+					Experience:
+					<div class="progress">
+						<div class="determinate" style="width: 40%"></div>
+					</div>
 				</div>
 			</div>
 		</div>
+
 		<!-- END row-1: Avatar & Stats -->
 
 		<!-- row-2: Menu Buttons & App -->
@@ -80,9 +165,6 @@
 			<!-- To Do List Screen -->
 			<div id="test1" class="col s12">
 				<ul id="to-do-list" class="collection with-header">
-					<li class="collection-header">
-						<h4>First Names</h4>
-					</li>
 					<li class="collection-item">
 						<div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div>
 					</li>
@@ -109,7 +191,7 @@
 	<!-- Container ending div -->
 
 	<!-- Floating Action Button -->
-	<div class="fixed-action-btn">
+	<div class="fixed-action-btn hide">
 		<a id="main-fab" class="btn-floating btn-large amber darken-1">
 					<i class="large material-icons">mode_edit</i>
 				</a>
@@ -128,7 +210,7 @@
 	</div>
 	<!-- END: Floating Action Button -->
 
-	<!-- Modal 1: Create a New To Do -->
+	<!-- Modal: Sign Up -->
 	<div id="todo-creation-modal" class="modal">
 		<!-- modal-content -->
 		<div class="modal-content">
@@ -186,9 +268,96 @@
 			<a id="create-new-todo-btn" href="#!" class="modal-close waves-effect waves-green btn-flat">Create</a>
 		</div>
 	</div>
-	<!-- END Modal 1: Create a New To Do -->
+	<!-- END Modal: Create a New To Do -->
+	<!-- Modal: Create a New To Do -->
+	<div id="todo-creation-modal" class="modal">
+		<!-- modal-content -->
+		<div class="modal-content">
+			<!-- Create To Do Modal Content -->
+			<h4>Create a New To Do</h4>
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="task-title" type="text" class="validate">
+					<label class="active" for="task-title">Task Title</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+					<label for="textarea2">Description</label>
+				</div>
+			</div>
 
-    <script src='bundle.js'></script>
+			<!--Subtasks row -->
+			<div class="row">
+				<div class="col s12">
+					<ul id="subtasks" class="collection with-header">
+						<li class="collection-header">
+							<h4>Subtasks</h4>
+						</li>
+						<div id="new-subtasks"></div>
+						<li id="subtask-input-container" class="collection-item">
+							<div class="input-field">
+								<input id="create-subtask-input" class="col s8" type="text">
+								<label class="active" for="create-subtask-input">Create a Subtask</label>
+
+								<a id="add-subtask" href="#!" class="secondary-content">
+											<i class="material-icons red-text">send</i>
+										</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- Subtasks Row END -->
+
+			<!-- Date Picker -->
+			<div class="input-field col s6">
+				<input id="#new-task-due-date" class="col s8 datepicker" type="text">
+				<label class="active" for="create-subtask-input">Due Date</label>
+			</div>
+			<!-- Date Picker END -->
+
+
+		</div>
+		<!-- END modal-content -->
+
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+			<a id="create-new-todo-btn" href="#!" class="modal-close waves-effect waves-green btn-flat">Create</a>
+		</div>
+	</div>
+	<!-- END Modal: Create a New To Do -->
+
+	<!-- <script src='bundle.js'></script> -->
+
+	<!-- Footer -->
+	<footer class="page-footer amber darken-1">
+		<div class="container ">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">GoalBot</h5>
+					<p class="grey-text text-lighten-4">A robotic approach to a motivational problem.</p>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<h5 class="white-text">Links</h5>
+					<ul>
+						<li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Sign Up</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Login</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Customer Support</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				© 2019 Copyright Text
+				<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer END -->
 
 
 	<script src="./js/jquery.js"></script>

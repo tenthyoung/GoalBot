@@ -231,7 +231,7 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "button";
     			a.className = "waves-effect waves-light btn";
-    			add_location(a, file, 10, 0, 82);
+    			add_location(a, file, 8, 0, 57);
     		},
 
     		l: function claim(nodes) {
