@@ -45,7 +45,7 @@ var refreshGoals = function() {
 
       var $li = $("<li>")
         .attr({
-          class: "list-group-item",
+          class: "collection-item",
           "data-id": goal.id
         })
         .append($a);
@@ -80,7 +80,7 @@ var handleFormSubmit = function(event) {
   };
 
   if (!(goalInfo.goal && goalInfo.completetionDate)) {
-    alert("You must enter a Goal and!");
+    alert("You must enter a Goal and 5 milestones!");
     return;
   }
 
@@ -97,7 +97,7 @@ var handleFormSubmit = function(event) {
   $ms5.val("");
 };
 
-// handleDeleteBtnClick is called when an Goal's delete button is clicked
+// handleDeleteBtnClick is called when a Goal's delete button is clicked
 // Remove the Goal from the db and refresh the list
 var handleDeleteBtnClick = function() {
   var idToDelete = $(this)
@@ -114,25 +114,20 @@ $submitBtn.on("click", handleFormSubmit);
 $goalList.on("click", ".delete", handleDeleteBtnClick);
 
 
-
-
-
-
-
-
-
 $(document).ready(() => {
-  // Materialize init
-  $('.sidenav').sidenav();
-  $('.tabs').tabs();
-  $('.fixed-action-btn').floatingActionButton();
-  $('.tooltipped').tooltip();
-  $('.modal').modal();
-  $('.datepicker').datepicker();
+  // This will initiliaze all of the Materialize JS Animations
+  M.AutoInit();
 
-  //==============================================================||
+  // $('.sidenav').sidenav();
+  // $('.tabs').tabs();
+  // $('.fixed-action-btn').floatingActionButton();
+  // $('.tooltipped').tooltip();
+  // $('.modal').modal();
+  // $('.datepicker').datepicker();
+
+  //================================================================================================================================||
   // Creating a New To Do
-  //==============================================================||
+  //================================================================================================================================||
 
   // Event Listener for Adding Subtasks within "To Do Creation Modal"
   $('#add-subtask').click(() => {
@@ -169,6 +164,14 @@ $(document).ready(() => {
           </li>`
       )
   });
+
+  //================================================================================================================================||
+  // Load up Avatar Image
+  //================================================================================================================================||
+  // Why are you changing the image source in javascript?
+  // -- When I try to set the image source within index.handlebars, the image source cannot access the images in public for some reason
+  $("#avatar").attr("src","../images/robotsmall.png");
+
 
 
 
