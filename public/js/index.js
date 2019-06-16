@@ -50,11 +50,16 @@ var refreshGoals = function() {
         })
         .append($a);
 
-      var $button = $("<button>")
+      var $deleteButton = $("<button>")
         .addClass("btn btn-danger float-right delete")
         .text("ｘ");
+      
+      // var $completeButton = $("<button>")
+      // .addClass("btn btn-danger float-right complete") 
+      // .text("check")
 
-      $li.append($button);
+      $li.append($deleteButton);
+      // $li.append($completeButton);
 
       return $li;
     });
@@ -108,6 +113,8 @@ var handleDeleteBtnClick = function() {
     refreshGoals();
   });
 };
+
+
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
