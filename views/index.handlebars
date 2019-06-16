@@ -89,7 +89,15 @@
                 {{!-- <li data-id="{{this.id}}" class="collection-item"> --}}
                 <li data-id="{{this.id}}">
                     <div class="collapsible-header">{{{this.goal}}}</div>
-                    <div class="collapsible-body"><span>lorem30</span>
+                    <div class="collapsible-body">
+                        <p>
+                        <strong>MS1</strong>: {{ms1}}</p>
+                        <strong>MS2</strong>: {{ms2}}</p>
+                        <strong>MS3</strong>: {{ms3}}</p>
+                        <strong>MS4</strong>: {{ms4}}</p>
+                        <strong>MS5</strong>: {{ms5}}</p>
+                        <p>
+                            <strong>End Date:</strong> {{completetionDate}}</p>
                         <button class="btn btn-danger float-right delete">ｘ</button>
 
                     </div>
@@ -117,10 +125,10 @@
 
 <!-- Floating Action Button -->
 <div class="fixed-action-btn">
-    <a id="#new-to-do" class="btn-floating btn-large amber  darken-2 tooltipped modal-trigger"
-                                href="#goalCreationModal" data-position="left" data-tooltip="New Goal">
-                                <i class="large material-icons">mode_edit</i>
-                            </a>
+    <a id="#new-to-do" class="btn-floating btn-large amber  darken-2 tooltipped modal-trigger" href="#goalCreationModal"
+        data-position="left" data-tooltip="New Goal">
+        <i class="large material-icons">mode_edit</i>
+    </a>
 </div>
 <!-- END: Floating Action Button -->
 
