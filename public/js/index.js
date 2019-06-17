@@ -10,11 +10,16 @@ var $submitBtn = $("#submit");
 var $goalList = $("#goal-list");
 var $checkbox = $(".checkbox");
 var $experiencePoints = $('#experiencePoints');
+var $level = $('#level');
 
+//=======================================//
+// Make sure these match the first page, or else the demo won't work
+//=======================================//
 // We need to track the experience
 // FUTURE EDIT NEEDED: But later on if you can make a database this is preferable
 // INSTRUCTIONS: Always make sure this is the same as what the styling says on index.handlebars for id=experiencePoints
-let experiencePercent = 0;
+var experiencePercent = 0;
+var currentLevel = parseInt($level.text());
 
 
 // The API object contains methods for each kind of request we'll make
@@ -207,8 +212,18 @@ $(document).ready(() => {
     console.table($experiencePoints)
 
     // We need to check if the width is 100% to trigger a level up
-    if (experiencePercent === 0) {
+    if (experiencePercent >= 100) {
+      currentLevel++;
+
+      // Update the DOM
+      $level.text(currentLevel);
       
+      experiencePercent = 0;
+      experiencePercentToString = `${experiencePercent.toString()}%`
+      $experiencePoints.css({ width: experiencePercentToString })
+
+
+
     }
 
   })
