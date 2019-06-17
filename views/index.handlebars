@@ -6,9 +6,8 @@
 
 
 <style>
-
-    #collapsible-body {
-        margin-top: 0;
+    #collapsibleBody {
+        padding-top: 0;
     }
 
     #appContainer {
@@ -68,13 +67,13 @@
             <div class="">
                 LEVEL: <span id="level">14</span>
             </div>
-            Battery Percentage:
-            <div id="experience" class="progress">
-                <div class="determinate" style="width: 0%"></div>
+            HP:
+            <div id="hp" class="progress">
+                <div class="determinate" style="width: 100%"></div>
             </div>
             Experience:
             <div id="experience" class="progress">
-                <div class="determinate" style="width: 0%"></div>
+                <div id="experiencePoints" class="determinate" style="width: 0%"></div>
             </div>
         </div>
         {{!-- Stats END --}}
@@ -102,37 +101,37 @@
                 {{!-- <li data-id="{{this.id}}" class="collection-item"> --}}
                 <li data-id="{{this.id}}">
                     <div class="collapsible-header">{{{this.goal}}}</div>
-                    <div class="collapsible-body">
+                    <div id="collapsibleBody" class="collapsible-body">
                         {{!-- Form to Complete Milestones START--}}
                         <form id="milestone form" action="#">
                             <p>
                                 <label>
-                                    <input class="black-text" type="checkbox" >
+                                    <input class="checkbox" type="checkbox" >
                                     <span>1st task: {{ms1}}</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input class="black-text" type="checkbox" >
-                                    <span>1st task: {{ms2}}</span>
+                                    <input class="checkbox" type="checkbox" >
+                                    <span>2nd task: {{ms2}}</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input class="black-text" type="checkbox" >
-                                    <span>1st task: {{ms3}}</span>
+                                    <input class="checkbox" type="checkbox" >
+                                    <span>3rd task: {{ms3}}</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input class="black-text" type="checkbox" >
-                                    <span>1st task: {{ms4}}</span>
+                                    <input class="checkbox" type="checkbox" >
+                                    <span>4th task: {{ms4}}</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input class="black-text" type="checkbox" >
-                                    <span>1st task: {{ms5}}</span>
+                                    <input class="checkbox" type="checkbox" >
+                                    <span>5th task: {{ms5}}</span>
                                 </label>
                             </p>
 

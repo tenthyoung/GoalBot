@@ -8,10 +8,18 @@ var $ms4 = $("#ms4");
 var $ms5 = $("#ms5");
 var $submitBtn = $("#submit");
 var $goalList = $("#goal-list");
+var $checkbox = $(".checkbox");
+var $experiencePoints = $('#experiencePoints');
+
+// We need to track the experience
+// FUTURE EDIT NEEDED: But later on if you can make a database this is preferable
+// INSTRUCTIONS: Always make sure this is the same as what the styling says on index.handlebars for id=experiencePoints
+let experiencePercent = 0;
+
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveGoal: function(newGoal) {
+  saveGoal: function (newGoal) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -21,13 +29,13 @@ var API = {
       data: JSON.stringify(newGoal)
     });
   },
-  getGoals: function() {
+  getGoals: function () {
     return $.ajax({
       url: "api/goals",
       type: "GET"
     });
   },
-  deleteGoal: function(id) {
+  deleteGoal: function (id) {
     return $.ajax({
       url: "api/goals/" + id,
       type: "DELETE"
@@ -36,9 +44,9 @@ var API = {
 };
 
 // refreshGoals gets new Goals from the db and repopulates the list
-var refreshGoals = function() {
-  API.getGoals().then(function(data) {
-    var $goals = data.map(function(goal) {
+var refreshGoals = function () {
+  API.getGoals().then(function (data) {
+    var $goals = data.map(function (goal) {
       var $a = $("<a>")
         .text(goal.goal)
         .attr("href", "/Goal/" + goal.id).attr("class", "collapsible-header");
@@ -53,7 +61,7 @@ var refreshGoals = function() {
       var $deleteButton = $("<button>")
         .addClass("btn btn-danger float-right delete")
         .text("ｘ");
-      
+
       // var $completeButton = $("<button>")
       // .addClass("btn btn-danger float-right complete") 
       // .text("check")
@@ -71,7 +79,7 @@ var refreshGoals = function() {
 
 // handleFormSubmit is called whenever we submit a new Goal
 // Save the new Goal to the db and refresh the list
-var handleFormSubmit = function(event) {
+var handleFormSubmit = function (event) {
   event.preventDefault();
 
   var goalInfo = {
@@ -89,7 +97,7 @@ var handleFormSubmit = function(event) {
     return;
   }
 
-  API.saveGoal(goalInfo).then(function() {
+  API.saveGoal(goalInfo).then(function () {
     refreshGoals();
   });
 
@@ -104,12 +112,12 @@ var handleFormSubmit = function(event) {
 
 // handleDeleteBtnClick is called when a Goal's delete button is clicked
 // Remove the Goal from the db and refresh the list
-var handleDeleteBtnClick = function() {
+var handleDeleteBtnClick = function () {
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
 
-  API.deleteGoal(idToDelete).then(function() {
+  API.deleteGoal(idToDelete).then(function () {
     refreshGoals();
   });
 };
@@ -122,6 +130,8 @@ $goalList.on("click", ".delete", handleDeleteBtnClick);
 
 
 $(document).ready(() => {
+
+
   // This will initiliaze all of the Materialize JS Animations
   M.AutoInit();
 
@@ -138,38 +148,38 @@ $(document).ready(() => {
 
   // Event Listener for Adding Subtasks within "To Do Creation Modal"
   $('#add-subtask').click(() => {
-      let input = $("#create-subtask-input").val().trim();
-      $('#new-subtasks').append(
-          `<li class="collection-item">
+    let input = $("#create-subtask-input").val().trim();
+    $('#new-subtasks').append(
+      `<li class="collection-item">
               <div>${input}
                   <a href="#!" class="secondary-content">
                       <i class="material-icons red-text delete-subtask">delete</i>
                   </a>
               </div>
           </li>`
-      )
+    )
 
-      $('#create-subtask-input').val('');
+    $('#create-subtask-input').val('');
   });
 
   //  Event Listener for Deleting Subtasks within "To Do Creation Modal"
   $('#todo-creation-modal').on('click', '.delete-subtask', () => {
-      $(this).remove();
+    $(this).remove();
   });
 
   // Event Listener to render the To Do Item to the App
   $('#todo-creation-modal').on('click', '#create-new-todo-btn', () => {
-      let newTask = $('#task-title').val().trim();
-      console.log(newTask)
-      $('#to-do-list').append(
-          `<li class="collection-item">
+    let newTask = $('#task-title').val().trim();
+    console.log(newTask)
+    $('#to-do-list').append(
+      `<li class="collection-item">
               <div>${newTask}
                   <a href="#!" class="secondary-content">
                       <i class="material-icons red-text">send</i>
                   </a>
               </div>
           </li>`
-      )
+    )
   });
 
   //================================================================================================================================||
@@ -177,10 +187,24 @@ $(document).ready(() => {
   //================================================================================================================================||
   // Why are you changing the image source in javascript?
   // -- When I try to set the image source within index.handlebars, the image source cannot access the images in public for some reason
-  $("#avatar").attr("src","../images/robotsmall.png");
+  $("#avatar").attr("src", "../images/robotsmall.png");
 
 
+  //================================================================================================================================||
+  // Checkbox Event Listeners
+  //================================================================================================================================||
+  // We need the User to gain experience everytime they complete a milestone
+  $(document).on("click", ".checkbox", () => {
+    console.log(this);
 
+    experiencePercent += 10;
 
+    // We need to convert the experiencePercent to a string or else we can't change the Experience Progress Bar with CSS
+    experiencePercentToString = `${experiencePercent.toString()}%`
+    $experiencePoints.css({ width: experiencePercentToString })
+
+    console.table(experiencePercent)
+    console.table($experiencePoints)
+  })
 
 })
