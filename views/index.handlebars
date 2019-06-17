@@ -6,6 +6,11 @@
 
 
 <style>
+
+    #collapsible-body {
+        margin-top: 0;
+    }
+
     #appContainer {
         margin: 0 auto;
         width: 100%;
@@ -89,7 +94,7 @@
             </div>
         </nav>
 
-        <!-- To Do List Screen -->
+        <!-- Goal List Screen -->
         <div id="test1" class="col s12">
             {{!-- <ul id="goal-list" class="collection with-header to-do-list"> --}}
             <ul id="goal-list" class="collapsible to-do-list">
@@ -98,14 +103,43 @@
                 <li data-id="{{this.id}}">
                     <div class="collapsible-header">{{{this.goal}}}</div>
                     <div class="collapsible-body">
-                        <strong>1st task</strong>: {{ms1}}</p>
-                        <strong>2nd task</strong>: {{ms2}}</p>
-                        <strong>3rd task</strong>: {{ms3}}</p>
-                        <strong>4th task</strong>: {{ms4}}</p>
-                        <strong>5th task</strong>: {{ms5}}</p>
-                        <strong>complete by</strong>: {{completetionDate}}</p>
-                        <button class="btn btn-danger float-right delete">ｘ</button>
+                        {{!-- Form to Complete Milestones START--}}
+                        <form id="milestone form" action="#">
+                            <p>
+                                <label>
+                                    <input class="black-text" type="checkbox" >
+                                    <span>1st task: {{ms1}}</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input class="black-text" type="checkbox" >
+                                    <span>1st task: {{ms2}}</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input class="black-text" type="checkbox" >
+                                    <span>1st task: {{ms3}}</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input class="black-text" type="checkbox" >
+                                    <span>1st task: {{ms4}}</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input class="black-text" type="checkbox" >
+                                    <span>1st task: {{ms5}}</span>
+                                </label>
+                            </p>
 
+                        </form>
+                            <strong>complete by</strong>: {{completetionDate}}</p>
+                            <button class="btn btn-danger float-right delete">ｘ</button>
+                        {{!-- Form to Complete Milestones END--}}
                     </div>
 
 
@@ -116,7 +150,7 @@
                 {{/each}}
             </ul>
         </div>
-        <!-- To Do List Screen END -->
+        <!-- Goal List Screen END -->
 
         <!-- <div id="test2" class="col s12">Test 2</div> -->
         <div id="test3" class="col s12"></div>
