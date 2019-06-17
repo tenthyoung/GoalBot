@@ -88,7 +88,13 @@
                 {{!-- <li data-id="{{this.id}}" class="collection-item"> --}}
                 <li data-id="{{this.id}}">
                     <div class="collapsible-header">{{{this.goal}}}</div>
-                    <div class="collapsible-body"><span>lorem30</span>
+                    <div class="collapsible-body">
+                        <strong>1st task</strong>: {{ms1}}</p>
+                        <strong>2nd task</strong>: {{ms2}}</p>
+                        <strong>3rd task</strong>: {{ms3}}</p>
+                        <strong>4th task</strong>: {{ms4}}</p>
+                        <strong>5th task</strong>: {{ms5}}</p>
+                        <strong>complete by</strong>: {{completetionDate}}</p>
                         <button class="btn btn-danger float-right delete">ｘ</button>
 
                     </div>
@@ -116,10 +122,10 @@
 
 <!-- Floating Action Button -->
 <div class="fixed-action-btn">
-    <a id="#new-to-do" class="btn-floating btn-large amber  darken-2 tooltipped modal-trigger"
-                                href="#goalCreationModal" data-position="left" data-tooltip="New Goal">
-                                <i class="large material-icons">mode_edit</i>
-                            </a>
+    <a id="#new-to-do" class="btn-floating btn-large amber darken-2 tooltipped modal-trigger"
+        href="#goalCreationModal" data-position="left" data-tooltip="New Goal">
+        <i class="large material-icons">mode_edit</i>
+    </a>
 </div>
 <!-- END: Floating Action Button -->
 
@@ -229,7 +235,7 @@
 
 <div id="modalSignUp" class="modal">
     <div class="modal-content">
-        <h2>Sign UP Form</h2>
+        <h2>Sign Up Form</h2>
         <form class="login">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>

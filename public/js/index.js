@@ -41,20 +41,25 @@ var refreshGoals = function() {
     var $goals = data.map(function(goal) {
       var $a = $("<a>")
         .text(goal.goal)
-        .attr("href", "/Goal/" + goal.id);
+        .attr("href", "/Goal/" + goal.id).attr("class", "collapsible-header");
 
       var $li = $("<li>")
         .attr({
-          class: "collection-item",
+          class: "collapsible-header",
           "data-id": goal.id
         })
         .append($a);
 
-      var $button = $("<button>")
+      var $deleteButton = $("<button>")
         .addClass("btn btn-danger float-right delete")
         .text("ｘ");
+      
+      // var $completeButton = $("<button>")
+      // .addClass("btn btn-danger float-right complete") 
+      // .text("check")
 
-      $li.append($button);
+      $li.append($deleteButton);
+      // $li.append($completeButton);
 
       return $li;
     });
@@ -108,6 +113,8 @@ var handleDeleteBtnClick = function() {
     refreshGoals();
   });
 };
+
+
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
