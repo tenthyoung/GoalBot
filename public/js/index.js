@@ -205,6 +205,12 @@ $(document).ready(() => {
 
     console.table(experiencePercent)
     console.table($experiencePoints)
+
+    // We need to check if the width is 100% to trigger a level up
+    if (experiencePercent === 0) {
+      
+    }
+
   })
 
 })
