@@ -1,5 +1,3 @@
-
-
 {{!-- App Container --}}
 {{!-- background-image: url('https://images.assetsdelivery.com/compings_v2/lilu330/lilu3301511/lilu330151100006.jpg'); --}}
 
@@ -60,38 +58,38 @@
                         <form id="milestone form" action="#">
                             <p>
                                 <label>
-                                    <input class="checkbox" type="checkbox" >
-                                    <span>1st task: {{ms1}}</span>
+                                    <input class="checkbox" type="checkbox">
+                                    <span class="black-text letter-spacing">SUBGOAL 1: {{ms1}}</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input class="checkbox" type="checkbox" >
-                                    <span>2nd task: {{ms2}}</span>
+                                    <input class="checkbox" type="checkbox">
+                                    <span class="black-text letter-spacing">SUBGOAL 2: {{ms2}}</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input class="checkbox" type="checkbox" >
-                                    <span>3rd task: {{ms3}}</span>
+                                    <input class="checkbox" type="checkbox">
+                                    <span class="black-text letter-spacing">SUBGOAL 3: {{ms3}}</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input class="checkbox" type="checkbox" >
-                                    <span>4th task: {{ms4}}</span>
+                                    <input class="checkbox" type="checkbox">
+                                    <span class="black-text letter-spacing">SUBGOAL 4: {{ms4}}</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input class="checkbox" type="checkbox" >
-                                    <span>5th task: {{ms5}}</span>
+                                    <input class="checkbox" type="checkbox">
+                                    <span class="black-text letter-spacing">SUBGOAL 5: {{ms5}}</span>
                                 </label>
                             </p>
 
                         </form>
-                            <strong>complete by</strong>: {{completetionDate}}</p>
-                            <button class="btn btn-danger float-right delete">ｘ</button>
+                        <strong>complete by</strong>: {{completetionDate}}</p>
+                        <button class="btn btn-danger float-right delete">ｘ</button>
                         {{!-- Form to Complete Milestones END--}}
                     </div>
 
@@ -207,6 +205,65 @@
 </div>
 <!-- New Goal Modal END -->
 
+
+{{!-- Level Up Modal START --}}
+<div id="levelUpModal" class="modal blue-grey">
+    <div id="levelUpModalContentContainer" class="modal-content">
+        <h4 class="center letter-spacing white-text">LEVEL UP</h4>
+        <br>
+        {{!-- <img id="levelUpImage" class="responsive-img center" src="https://socialmediamavericks.com/wp-content/uploads/2017/01/animat-rocket-color.gif" alt=""> --}}
+        {{!-- <img id="levelUpImage" class="responsive-img center" src="https://socialmediamavericks.com/wp-content/uploads/2017/01/animat-rocket-color.gif" alt=""> --}}
+        <div id="levelUpImageContainer" class="z-depth-2">
+            <img id="levelUpImage" class="responsive-img"
+                src="/images/robotsmall.png" alt="">
+        </div>
+        <br>
+        <br>
+
+        <table id="levelUpStatsTable" class="responsive-table center white z-depth-2">
+            <thead>
+                <tr class="amber darken-2 ">
+                    <th class="center white-text">New Stats</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="center">HP</td>
+                    <td class="">234
+                        <span class="green-text">+60</span>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center">Intelligence</td>
+                    <td>184
+                        <span class="green-text">+25</span>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center">Strength</td>
+                    <td>116
+                        <span class="green-text">+15</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center">Speed</td>
+                    <td>115
+                        <span class="green-text">+34</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="modal-footer blue-grey">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text">Continue</a>
+    </div>
+</div>
+{{!-- Level Up Modal END --}}
 
 
 

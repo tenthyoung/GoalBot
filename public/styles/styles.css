@@ -52,6 +52,39 @@ main {
   padding-top: 0;
 }
 
+#levelUpImage {
+  width: 200px;
+}
+
+#levelUpImageContainer {
+  /* Orange Energy */
+  background-image: url('https://media0.giphy.com/media/CyeGh5u6xmhgY/giphy.gif');
+  background-repeat: no-repeat;
+  background-position: 45% 35%;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  
+  /* We need to center the avatar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#levelUpModalContentContainer {
+  /* We need ot center the animation into the middle of the modal */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#levelUpStatsTable {
+  width: 400px;
+  border-radius: 10px;
+}
+
 #menuButtons {
   margin: 0;
 }
