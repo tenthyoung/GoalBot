@@ -203,8 +203,8 @@ $(document).ready(() => {
     $("#avatar").addClass("animated tada 2s");
 
     setTimeout(() => {
-      $("#avatar").removeClass("animated tada 2s");
-    }, 2000);
+      $("#avatar").removeClass("animated tada 1s");
+    }, 1000);
 
     // Gain experience after completing a task
     experiencePercent += 10;
