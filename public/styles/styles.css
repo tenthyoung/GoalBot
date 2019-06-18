@@ -16,6 +16,9 @@ main {
 }
 /* Enables Sticky Footer END */
 
+.card {
+  border-radius: 20px !important;
+}
 
 .letter-spacing {
   letter-spacing: 1px;
@@ -31,12 +34,16 @@ main {
 }
 
 #appContainer {
-  margin: 0 auto;
-  width: 100%;
+  width: 100vw;
+}
+
+#arrow_forwardContainer {
+
 }
 
 #avatar {
   width: 200px;
+
 }
 
 #avatarAndStats {
@@ -52,11 +59,16 @@ main {
   padding-top: 0;
 }
 
-#levelUpImage {
+#goalListContainer {
+  padding: 0;
+  margin: 0;
+}
+
+#levelUpImage, #upgradeImage {
   width: 200px;
 }
 
-#levelUpImageContainer {
+#levelUpImageContainer, #upgradeImageContainer {
   /* Orange Energy */
   background-image: url('https://media0.giphy.com/media/CyeGh5u6xmhgY/giphy.gif');
   background-repeat: no-repeat;
@@ -72,7 +84,7 @@ main {
   
 }
 
-#levelUpModalContentContainer {
+#levelUpModalContentContainer, #upgradeModalContentContainer {
   /* We need ot center the animation into the middle of the modal */
   display: flex;
   flex-direction: column;
@@ -80,8 +92,8 @@ main {
   align-items: center;
 }
 
-#levelUpStatsTable {
-  width: 400px;
+#levelUpStatsTable, #upgradeStatsTable {
+  width: 300px;
   border-radius: 10px;
 }
 
@@ -103,7 +115,12 @@ main {
   padding: 0;
 }
 
-#test1 {
-  padding: 0;
-  margin: 0;
+#upgradeImageContainer {
+  background-image: url('https://media1.giphy.com/media/jtXRDVzaCPXSynUz7h/giphy.gif?cid=790b76115d0955eb59652f6636631d9a&rid=giphy.gif');
+  background-size: cover;
+}
+
+#upgradeBot1 {
+  margin: 0 auto;
+  width: 300px;
 }

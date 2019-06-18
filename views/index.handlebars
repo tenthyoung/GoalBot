@@ -6,13 +6,13 @@
     <!--  Avatar & Stats -->
     <div id="avatarAndStats" class="row">
         {{!-- Avatar --}}
-        <div class="col s4">
-            <img id="avatar" src="" alt="robot avatar">
+        <div id="avatarContainer" class="col s4 m3">
+            <img id="avatar" src="" alt="robot avatar right-align">
         </div>
         {{!-- Avatar END --}}
 
         {{!-- Stats --}}
-        <div id="statsContainer" class="col s7 play-font container">
+        <div id="statsContainer" class="col s7 m8 l6 play-font container">
             <div class="letter-spacing">
                 NAME: <span id="name">CHRIS STEAD</span>
             </div>
@@ -32,21 +32,23 @@
     </div>
     <!-- Avatar & Stats END -->
 
+
+
     <!-- Menu Buttons & App -->
     <div id="menuButtons" class="row">
         <nav class="nav-extended blue-grey darken-2">
             <div class="nav-content">
                 <ul class="tabs tabs-transparent">
-                    <li class="tab"><a class="active " href="#test1">Goals</a></li>
-                    <!-- <li class="tab"><a href="#test2">Daily Goal</a></li> -->
-                    <li class="tab"><a href="#test3">Upgrade</a></li>
-                    <li class="tab"><a href="#test4">Motivation</a></li>
+                    <li class="tab"><a class="active " href="#goalListContainer">Goals</a></li>
+                    <li class="tab"><a href="#upgradeContainer">Upgrade</a></li>
+                    <li class="tab"><a href="#test3">Motivation</a></li>
+                    {{!-- <li class="tab"><a href="#test4">Motivation</a></li> --}}
                 </ul>
             </div>
         </nav>
 
         <!-- Goal List Screen -->
-        <div id="test1" class="col s12">
+        <div id="goalListContainer" class="col s12">
             {{!-- <ul id="goal-list" class="collection with-header to-do-list"> --}}
             <ul id="goal-list" class="collapsible to-do-list">
                 {{#each goals}}
@@ -103,9 +105,34 @@
         </div>
         <!-- Goal List Screen END -->
 
-        <!-- <div id="test2" class="col s12">Test 2</div> -->
+        {{!--====================--}}
+        {{!-- Upgrades Tab START --}}
+        {{!--====================--}}
+        <div id="upgradeContainer" class="col s12 container">
+            <div class="row">
+                <div class="col s6 offset-s3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img id="upgradeBot1" class="responsive-img" src="images/robotmedium.png">
+                            <a id="upgradeModalTrigger" class="btn-floating halfway-fab waves-effect waves-light amber darken-2 tooltipped" data-position="top" data-tooltip="Only $14.99"><i class="material-icons">build</i></a>
+                        </div>
+                        <div class="card-content blue-grey darken-2">
+                            <h2 class="letter-spacing white-text ">R3D3</h2>
+                            <p class="letter-spacing white-text text-darken-2">Level 15</p>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+
+        </div>
+        {{!--====================--}}
+        {{!-- Upgrades Tab END   --}}
+        {{!--====================--}}
+
+
         <div id="test3" class="col s12"></div>
-        <div id="test4" class="col s12"></div>
+        {{!-- <div id="test4" class="col s12"></div> --}}
     </div>
     <!-- Menu Buttons and App END -->
 
@@ -209,18 +236,17 @@
 {{!-- Level Up Modal START --}}
 <div id="levelUpModal" class="modal blue-grey">
     <div id="levelUpModalContentContainer" class="modal-content">
-        <h4 class="center letter-spacing white-text">LEVEL UP</h4>
+        <h4 class="center letter-spacing white-text">LEVEL UP!</h4>
         <br>
         {{!-- <img id="levelUpImage" class="responsive-img center" src="https://socialmediamavericks.com/wp-content/uploads/2017/01/animat-rocket-color.gif" alt=""> --}}
         {{!-- <img id="levelUpImage" class="responsive-img center" src="https://socialmediamavericks.com/wp-content/uploads/2017/01/animat-rocket-color.gif" alt=""> --}}
         <div id="levelUpImageContainer" class="z-depth-2">
-            <img id="levelUpImage" class="responsive-img"
-                src="/images/robotsmall.png" alt="">
+            <img id="levelUpImage" class="responsive-img" src="/images/robotsmall.png" alt="">
         </div>
         <br>
         <br>
 
-        <table id="levelUpStatsTable" class="responsive-table center white z-depth-2">
+        <table id="levelUpStatsTable" class=" center white z-depth-2">
             <thead>
                 <tr class="amber darken-2 ">
                     <th class="center white-text">New Stats</th>
@@ -264,6 +290,62 @@
     </div>
 </div>
 {{!-- Level Up Modal END --}}
+
+{{!-- Upgrade Modal START --}}
+<div id="upgradeModal" class="modal blue-grey">
+    <div id="upgradeModalContentContainer" class="modal-content">
+        <h4 class="center letter-spacing white-text">UPGRADED!</h4>
+        <br>
+        <div id="upgradeImageContainer" class="z-depth-2">
+            <img id="upgradeImage" class="responsive-img" src="/images/robotmedium.png" alt="">
+        </div>
+        <br>
+        <br>
+
+        <table id="upgradeStatsTable" class=" center white z-depth-2">
+            <thead>
+                <tr class="amber darken-2 ">
+                    <th class="center white-text">New Stats</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="center">HP</td>
+                    <td class="">1294
+                        <span class="green-text">+948</span>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center">Intelligence</td>
+                    <td>1209
+                        <span class="green-text">+847</span>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center">Strength</td>
+                    <td>1131
+                        <span class="green-text">+834</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center">Speed</td>
+                    <td>1149
+                        <span class="green-text">+948</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="modal-footer blue-grey">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text">Continue</a>
+    </div>
+</div>
+{{!-- Upgrade Modal END --}}
 
 
 
