@@ -200,8 +200,13 @@ $(document).ready(() => {
   //================================================================================================================================||
   // We need the User to gain experience everytime they complete a milestone
   $(document).on("click", ".checkbox", () => {
-    console.log(this);
+    $("#avatar").addClass("animated tada 2s");
 
+    setTimeout(() => {
+      $("#avatar").removeClass("animated tada 2s");
+    }, 2000);
+
+    // Gain experience after completing a task
     experiencePercent += 10;
 
     // We need to convert the experiencePercent to a string or else we can't change the Experience Progress Bar with CSS
@@ -217,7 +222,7 @@ $(document).ready(() => {
 
       // Update the DOM
       $level.text(currentLevel);
-      
+
       experiencePercent = 0;
       experiencePercentToString = `${experiencePercent.toString()}%`
       $experiencePoints.css({ width: experiencePercentToString })

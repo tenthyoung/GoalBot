@@ -1,4 +1,27 @@
 
+body {
+  font-family: "Play", sans-serif;
+
+
+  /* Enables Sticky Footer START */
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  /* Enables Sticky Footer END */
+}
+
+/* Enables Sticky Footer START */
+main {
+  flex: 1 0 auto;
+}
+/* Enables Sticky Footer END */
+
+
+.letter-spacing {
+  letter-spacing: 1px;
+}
+
+
 .play-font {
   font-family: 'Play', sans-serif !important;
 }
@@ -6,9 +29,48 @@
 .list-group-item {
   line-height: 2.5;
 }
-/*================*/
-/* Robot Avatar */
-/*================*/
+
+#appContainer {
+  margin: 0 auto;
+  width: 100%;
+}
+
 #avatar {
-  width: 100px;
+  width: 200px;
+}
+
+#avatarAndStats {
+  background-image: url('https://image.freepik.com/free-photo/metallic-background_53876-14624.jpg');
+  background-size: cover;
+  background-position-y: bottom;
+  
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#collapsibleBody {
+  padding-top: 0;
+}
+
+#menuButtons {
+  margin: 0;
+}
+
+#navbarTitle {
+  letter-spacing: 2px;
+}
+
+#statsContainer {
+  color: white;
+  margin-top: 30px;
+}
+
+#subtaskContainer {
+  margin: 0;
+  padding: 0;
+}
+
+#test1 {
+  padding: 0;
+  margin: 0;
 }
