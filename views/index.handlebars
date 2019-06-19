@@ -2,8 +2,133 @@
 {{!-- background-image: url('https://images.assetsdelivery.com/compings_v2/lilu330/lilu3301511/lilu330151100006.jpg'); --}}
 
 
+{{!-- Home START  --}}
+<div id="home">
+    <div id="jumbotron" class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br>
+            <br>
+            <h1 class="header center white-text">Incentivize Your Goals</h1>
+            <div class="row center">
+                <h5 class="header col s12 light white-text">A robotic approach to a motivational problem.</h5>
+            </div>
+            <div class="row center">
+                <a id="getStartedBtn" href="#" id="download-button" class="btn-large waves-effect waves-light amber darken-2">Get Started</a>
+            </div>
+            <br>
+            <br>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="section">
+
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text">
+                            <i class="mdi-image-flash-on"></i>
+                        </h2>
+                        <h5 class="center">Set Goals</h5>
+
+                        <p class="light">We did most of the heavy lifting for you to provide a system for you to save
+                            your goals all in one place. Our patented system allows you to put your goals on a list.
+                            incorporate our custom
+                            components. Additionally, we refined animations and transitions to provide a smoother
+                            experience
+                            for ambitious people.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text">
+                            <i class="mdi-social-group"></i>
+                        </h2>
+                        <h5 class="center">Level Up Your Bot</h5>
+
+                        <p class="light">
+                            Our trademarked bot graphics allow users from any age group to be engaged with their goals.
+                            In future versions we will allow bots to battle, as well as letting people to build their
+                            own
+                            colonies to complete their tasks.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text">
+                            <i class="mdi-action-settings"></i>
+                        </h2>
+                        <h5 class="center">Stay Motivated</h5>
+
+                        <p class="light">Studies have shown that gamifying the process of accomplish a task makes it not
+                            only fun,
+                            but also entirely effortless. Mark Zuckerberg, and Bill Gates both invested $3 billion into
+                            Goalbot, Inc.
+                            So even they believe it'll help the educational sector.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="jumbotron2" class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br>
+            <br>
+            <h1 class="header center white-text">Reviews</h1>
+            <div class="row center">
+                <h5 class="header col s12 light white-text">"We would give GoalBot an A+"
+                    <br>
+                    -Chris Stead, Kevin Lee, &
+                    Kevin Castro.</h5>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+
+</div>
+{{!-- Home END --}}
+
+{{!-- Sign up START --}}
+<div id="signUpContainer" class="container">
+    <h1>Login</h1>
+
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            
+            <a id="logInBtn" href="#" class="waves-effect waves-light btn amber darken-2">Login</a>
+            <br>
+            <br>
+            <a href="#" class="waves-effect waves-light btn amber darken-2">Create a New User</a>
+        </form>
+    </div>
+</div>
+
+{{!-- Sign up END --}}
+
 {{!-- Entire App Container Start --}}
-<div id="appContainer" class="container">
+<div id="appContainer" class="container hide">
     <!--  Avatar & Stats -->
     <div id="avatarAndStats" class="row">
         {{!-- Avatar --}}
@@ -182,7 +307,7 @@
 
 
 <!-- Floating Action Button -->
-<div class="fixed-action-btn">
+<div id="floatingActionButton" class="fixed-action-btn hide">
     <a id="#new-to-do" class="btn-floating btn-large amber darken-2 tooltipped modal-trigger"
         href="#goalCreationModal" data-position="left" data-tooltip="New Goal">
         <i class="large material-icons">mode_edit</i>

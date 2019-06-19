@@ -241,4 +241,22 @@ $(document).ready(() => {
 
   })
 
+
+  //================================================================================================================================||
+  // Home page to App
+  //================================================================================================================================||
+  $(document).on('click', '#getStartedBtn', () => {
+    $('#home').addClass('hide');
+    
+    $('#signUpContainer').removeClass('hide');
+  });
+
+  $(document).on('click', '#logInBtn', () => {
+    $('#signUpContainer').addClass('hide');
+
+    $('#appContainer').removeClass('hide');
+    $('#floatingActionButton').removeClass('hide');
+  });
+
+
 })
