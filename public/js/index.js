@@ -237,6 +237,7 @@ $(document).ready(() => {
     $("#upgradeModal").modal('open');
 
     $("#avatar").attr("src", "../images/robotmedium.png");
+    $("#levelUpImage").attr("src", "../images/robotmedium.png");
 
   })
 
