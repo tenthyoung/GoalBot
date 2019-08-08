@@ -1,7 +1,7 @@
 # GoalBot
 
 ## Purpose
-GoalBot is an web application that incentivizes the completion of tasks by allowing the user to level up a robot.  After completing enough tasks, the user can upgrade the robot to boost its stats and build.
+GoalBot is a web application that incentivizes the completion of tasks by allowing the user to level up a robot.  After completing enough tasks, the user can upgrade the robot to boost its stats and build.
 
 
 ## Frameworks/Libraries/Languages Used:
