@@ -48,6 +48,7 @@ var API = {
   }
 };
 
+
 // refreshGoals gets new Goals from the db and repopulates the list
 var refreshGoals = function () {
   API.getGoals().then(function (data) {
@@ -247,7 +248,7 @@ $(document).ready(() => {
   //================================================================================================================================||
   $(document).on('click', '#getStartedBtn', () => {
     $('#home').addClass('hide');
-    
+
     $('#signUpContainer').removeClass('hide');
   });
 
