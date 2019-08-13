@@ -62,6 +62,10 @@ main {
   margin-bottom: 0;
 }
 
+#brand-logo {
+  margin-left: 20px;
+}
+
 #collapsibleBody {
   padding-top: 0;
 }
